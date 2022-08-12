@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <script>
+            function saved_data() {
+                var imageCaption = document.getElementById("caption")
+                localStorage.setItem("ImageCaption", imageCaption.value)
+
+                var imageFile = document.getElementById("picture")
+                localStorage.setItem("ImageFile", imageFile.value)
+
+                alert("I love: " + localStorage.getItem("ImageCaption"))
+            }
+        </script>
+    </head>
+
+    <body>
+        <form onsubmit="saved_data()">
+            <label for = "caption">Image Caption:</label><br>
+            <input type="text" id="caption" name="caption"><br>
+
+            <label for="picture">Upload Image: </label><br>
+            <input type="file" id="picture" name="picture"><br>
+
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
